@@ -13,8 +13,13 @@ while True:
     print(('#' * leftWidth) + ('' * gapWidth) + ('#' * rightWidth))
     try:
         time.sleep(pause_amount)
-        except KeyboardInterrupt:
-            sys.exit()
+    except KeyboardInterrupt:
+        sys.exit    
     diceRoll = random.randint(1,6)
     if diceRoll == 1 and leftWidth > 1:
-                
+        leftWidth = leftWidth - 1
+    elif diceRoll == 2 and leftWidth + gapWidth < width - 1:
+        leftWidth = leftWidth + 1
+    else:
+        pass        
+
